@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <Router basename="/pepero-test">
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="app">
         <Routes>
           <Route path="/" element={<StartPage />} />
