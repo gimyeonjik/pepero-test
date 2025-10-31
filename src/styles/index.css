@@ -5,18 +5,18 @@
 }
 
 :root {
-  --hanyang-blue: #0e4a84;
-  --hanyang-blue-dark: #0a3661;
-  --hanyang-blue-light: #1565a8;
-  --accent-gold: #fbbf24;
-  --accent-gold-light: #fcd34d;
-  --dark-bg: #0c3a6b;
-  --darker-bg: #0e4a84;
-  --text-primary: #ffffff;
-  --text-secondary: #e0e7ef;
-  --accent-light: rgba(251, 191, 36, 0.2);
-  --accent-glow: rgba(251, 191, 36, 0.4);
-  --blue-glow: rgba(14, 74, 132, 0.6);
+  --hanyang-blue: #fde2e4;
+  --hanyang-blue-dark: #f9bec7;
+  --hanyang-blue-light: #fff1f5;
+  --accent-gold: #ff8dad;
+  --accent-gold-light: #ffb3c6;
+  --dark-bg: #f8cdd5;
+  --darker-bg: #f6b2c3;
+  --text-primary: #4a1d32;
+  --text-secondary: #7a3f57;
+  --accent-light: rgba(255, 141, 173, 0.18);
+  --accent-glow: rgba(255, 141, 173, 0.35);
+  --blue-glow: rgba(249, 190, 199, 0.6);
 }
 
 body {
@@ -51,4 +51,13 @@ button {
 
 button:active {
   transform: scale(0.98);
+}
+
+@keyframes floatHearts {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -800px;
+  }
 }

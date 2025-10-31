@@ -5,6 +5,7 @@ import '../styles/StartPage.css'
 function StartPage() {
   const navigate = useNavigate();
   const [logoExists, setLogoExists] = useState(false);
+  const [peperoExists, setPeperoExists] = useState(false);
 
   useEffect(() => {
     // 한양대 로고 이미지 존재 여부 확인
@@ -12,6 +13,11 @@ function StartPage() {
     img.onload = () => setLogoExists(true);
     img.onerror = () => setLogoExists(false);
     img.src = '/images/lion.png';
+
+    const peperoImg = new Image();
+    peperoImg.onload = () => setPeperoExists(true);
+    peperoImg.onerror = () => setPeperoExists(false);
+    peperoImg.src = '/images/pepero.png';
   }, []);
 
   const handleStart = () => {
@@ -29,17 +35,23 @@ function StartPage() {
           )}
         </div>
         <div className="start-branding">한양대학교 ERICA 인공지능학과 학생회 [ai:m]</div>
-        <div className="start-emoji">🍫</div>
-        <h1 className="start-title">나는 어떤 초코일까?</h1>
+        <div className="start-emoji">
+          {peperoExists ? (
+            <img src="/images/pepero.png" alt="빼빼로 이미지" className="start-pepero" />
+          ) : (
+            <span role="img" aria-label="초콜릿">🍫</span>
+          )}
+        </div>
+        <h1 className="start-title">나는 어떤 빼빼로일까?</h1>
         <p className="start-description">
-          당신의 성향을 알아보는 4가지 질문
+          당신의 빼빼로 성향을 알아보는 10가지 질문
         </p>
         <button className="start-button" onClick={handleStart}>
           테스트 시작하기
           <span className="arrow">→</span>
         </button>
         <div className="start-info">
-          <p>⏱️ 약 1분 소요</p>
+          <p>⏱️ 약 2분 소요</p>
         </div>
       </div>
     </div>

@@ -4,8 +4,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, var(--hanyang-blue-dark) 0%, var(--hanyang-blue) 50%, var(--hanyang-blue-light) 100%);
+  background: linear-gradient(135deg, var(--hanyang-blue-light) 0%, var(--hanyang-blue) 50%, var(--hanyang-blue-dark) 100%);
   padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/heart.svg');
+  background-size: 260px;
+  background-repeat: repeat;
+  background-position: 0 0;
+  opacity: 0.14;
+  animation: floatHearts 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .start-container {
@@ -13,6 +29,8 @@
   width: 100%;
   text-align: center;
   animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 .hanyang-logo-container {
@@ -47,6 +65,13 @@
   animation: bounce 2s infinite;
 }
 
+.start-pepero {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .start-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -63,7 +88,7 @@
 
 .start-button {
   background: var(--accent-gold);
-  color: #000000;
+  color: #ffffff;
   padding: 18px 50px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -131,6 +156,10 @@
 
   .start-emoji {
     font-size: 80px;
+  }
+
+  .start-pepero {
+    width: 90px;
   }
 
   .start-button {

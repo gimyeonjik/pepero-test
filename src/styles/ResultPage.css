@@ -4,9 +4,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, var(--hanyang-blue-dark) 0%, var(--hanyang-blue) 50%, var(--hanyang-blue-light) 100%);
+  background: linear-gradient(135deg, var(--hanyang-blue-light) 0%, var(--hanyang-blue) 50%, var(--hanyang-blue-dark) 100%);
   padding: 40px 20px;
   position: relative;
+  overflow: hidden;
+}
+
+.result-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/heart.svg');
+  background-size: 280px;
+  background-repeat: repeat;
+  background-position: 0 0;
+  opacity: 0.16;
+  animation: floatHearts 34s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hanyangi-mascot {
@@ -20,12 +35,12 @@
 .hanyangi-image {
   width: 120px;
   height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 6px 16px rgba(255, 141, 173, 0.45));
 }
 
 .hanyangi-emoji {
   font-size: 80px;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 6px 16px rgba(255, 141, 173, 0.45));
 }
 
 @keyframes floatMascot {
@@ -40,19 +55,43 @@
 .result-container {
   max-width: 600px;
   width: 100%;
-  background: rgba(12, 58, 107, 0.8);
+  background: rgba(255, 241, 245, 0.9);
   border-radius: 20px;
   padding: 50px 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 20px 45px rgba(255, 141, 173, 0.25);
+  border: 2px solid rgba(255, 141, 173, 0.3);
   animation: fadeInScale 0.6s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
-.result-emoji {
-  font-size: 100px;
-  text-align: center;
+.result-visual {
+  display: flex;
+  justify-content: center;
   margin-bottom: 30px;
+}
+
+.result-image {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(255, 141, 173, 0.35));
   animation: zoomIn 0.8s ease-out;
+  border-radius: 20px;
+  background: rgba(255, 186, 204, 0.35);
+  padding: 18px;
+}
+
+.result-emoji-fallback {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  border-radius: 20px;
+  background: rgba(255, 186, 204, 0.35);
+  box-shadow: 0 12px 24px rgba(255, 141, 173, 0.25);
 }
 
 .result-title {
@@ -73,7 +112,7 @@
 }
 
 .traits-container {
-  background: var(--hanyang-blue-dark);
+  background: rgba(255, 186, 204, 0.4);
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 40px;
@@ -95,7 +134,7 @@
   font-size: 1.05rem;
   color: var(--text-secondary);
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(122, 63, 87, 0.15);
 }
 
 .traits-list li:last-child {
@@ -117,6 +156,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
 }
 
 .share-button {
@@ -126,33 +166,24 @@
   border-radius: 12px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.share-button.instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  color: #ffffff;
-}
-
-.share-button.instagram:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(220, 39, 67, 0.4);
+  width: 100%;
 }
 
 .share-button.copy {
-  background: #34C759;
+  background: linear-gradient(45deg, #ff8dad 0%, #ff9fbf 100%);
   color: #ffffff;
 }
 
 .share-button.copy:hover {
-  background: #28a745;
+  background: linear-gradient(45deg, #ff9fbf 0%, #ffc3d6 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 141, 173, 0.35);
 }
 
 .restart-button {
   width: 100%;
   background: var(--accent-gold);
-  color: #000000;
+  color: #ffffff;
   padding: 18px;
   font-size: 1.1rem;
   font-weight: 600;
@@ -207,7 +238,15 @@
     padding: 40px 25px;
   }
 
-  .result-emoji {
+  .result-image {
+    width: 130px;
+   height: 130px;
+   padding: 14px;
+ }
+
+  .result-emoji-fallback {
+    width: 130px;
+    height: 130px;
     font-size: 80px;
   }
 
