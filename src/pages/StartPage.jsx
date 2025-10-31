@@ -29,17 +29,17 @@ function StartPage() {
           )}
         </div>
         <div className="start-branding">한양대학교 ERICA 인공지능학과 학생회 [ai:m]</div>
-        <div className="start-emoji">🤔</div>
-        <h1 className="start-title">나는 에겐남일까<br />테토남일까?</h1>
+        <div className="start-emoji">🍫</div>
+        <h1 className="start-title">나는 어떤 초코일까?</h1>
         <p className="start-description">
-          당신의 성향을 알아보는 12가지 질문
+          당신의 성향을 알아보는 4가지 질문
         </p>
         <button className="start-button" onClick={handleStart}>
           테스트 시작하기
           <span className="arrow">→</span>
         </button>
         <div className="start-info">
-          <p>⏱️ 약 2분 소요</p>
+          <p>⏱️ 약 1분 소요</p>
         </div>
       </div>
     </div>
