@@ -1,0 +1,140 @@
+.start-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--hanyang-blue-dark) 0%, var(--hanyang-blue) 50%, var(--hanyang-blue-light) 100%);
+  padding: 20px;
+}
+
+.start-container {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hanyang-logo-container {
+  margin-bottom: 20px;
+}
+
+.hanyang-logo {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hanyang-logo-emoji {
+  font-size: 80px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.start-branding {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.start-emoji {
+  font-size: 100px;
+  margin-bottom: 30px;
+  animation: bounce 2s infinite;
+}
+
+.start-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.start-description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 50px;
+}
+
+.start-button {
+  background: var(--accent-gold);
+  color: #000000;
+  padding: 18px 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px var(--accent-glow);
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  background: var(--accent-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--accent-glow);
+}
+
+.start-button .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.start-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+.start-info {
+  margin-top: 40px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hanyang-logo {
+    width: 100px;
+  }
+
+  .hanyang-logo-emoji {
+    font-size: 60px;
+  }
+
+  .start-title {
+    font-size: 2rem;
+  }
+
+  .start-emoji {
+    font-size: 80px;
+  }
+
+  .start-button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+  }
+}
