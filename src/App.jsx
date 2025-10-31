@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/pepero-test">
       <div className="app">
         <Routes>
           <Route path="/" element={<StartPage />} />
