@@ -11,7 +11,7 @@ function StartPage() {
     const img = new Image();
     img.onload = () => setLogoExists(true);
     img.onerror = () => setLogoExists(false);
-    img.src = '/images/hanyang-logo.png';
+    img.src = '/images/lion.png';
   }, []);
 
   const handleStart = () => {
@@ -23,12 +23,12 @@ function StartPage() {
       <div className="start-container">
         <div className="hanyang-logo-container">
           {logoExists ? (
-            <img src="/images/hanyang-logo.png" alt="한양대학교 로고" className="hanyang-logo" />
+            <img src="/images/lion.png" alt="한양대학교 로고" className="hanyang-logo" />
           ) : (
             <div className="hanyang-logo-emoji">🎓</div>
           )}
         </div>
-        <div className="start-branding">한양대학교 학생회</div>
+        <div className="start-branding">한양대학교 ERICA 인공지능학과 학생회 [ai:m]</div>
         <div className="start-emoji">🤔</div>
         <h1 className="start-title">나는 에겐남일까<br />테토남일까?</h1>
         <p className="start-description">
