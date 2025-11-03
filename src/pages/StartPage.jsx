@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/StartPage.css'
 
+const basePath = (import.meta.env.BASE_URL ?? '/');
+const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
+const withBasePath = (relativePath) => `${normalizedBasePath}${relativePath.replace(/^\//, '')}`;
+
 function StartPage() {
   const navigate = useNavigate();
   const [logoExists, setLogoExists] = useState(false);
@@ -12,12 +16,12 @@ function StartPage() {
     const img = new Image();
     img.onload = () => setLogoExists(true);
     img.onerror = () => setLogoExists(false);
-    img.src = '/images/lion.png';
+    img.src = withBasePath('images/lion.png');
 
     const peperoImg = new Image();
     peperoImg.onload = () => setPeperoExists(true);
     peperoImg.onerror = () => setPeperoExists(false);
-    peperoImg.src = '/images/pepero.png';
+    peperoImg.src = withBasePath('images/pepero.png');
   }, []);
 
   const handleStart = () => {
@@ -29,7 +33,7 @@ function StartPage() {
       <div className="start-container">
         <div className="hanyang-logo-container">
           {logoExists ? (
-            <img src="/images/lion.png" alt="한양대학교 로고" className="hanyang-logo" />
+            <img src={withBasePath('images/lion.png')} alt="한양대학교 로고" className="hanyang-logo" />
           ) : (
             <div className="hanyang-logo-emoji">🎓</div>
           )}
@@ -37,7 +41,7 @@ function StartPage() {
         <div className="start-branding">한양대학교 ERICA 인공지능학과 학생회 [ai:m]</div>
         <div className="start-emoji">
           {peperoExists ? (
-            <img src="/images/pepero.png" alt="빼빼로 이미지" className="start-pepero" />
+            <img src={withBasePath('images/pepero.png')} alt="빼빼로 이미지" className="start-pepero" />
           ) : (
             <span role="img" aria-label="초콜릿">🍫</span>
           )}

@@ -157,7 +157,7 @@ export const results = [
       '🎨 창의적이고 유니크한 감각',
       '💎 남들과 다른 매력 포인트'
     ],
-    image: withBasePath('images/armond.png'),
+    image: withBasePath('images/almond.png'),
     emoji: '🌰'
   }
 ];

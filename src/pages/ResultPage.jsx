@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/ResultPage.css'
 
+const basePath = (import.meta.env.BASE_URL ?? '/');
+const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
+const withBasePath = (relativePath) => `${normalizedBasePath}${relativePath.replace(/^\//, '')}`;
+
 function ResultPage({ result, onReset }) {
   const navigate = useNavigate();
   const [hanyangiExists, setHanyangiExists] = useState(false);
@@ -12,7 +16,7 @@ function ResultPage({ result, onReset }) {
     const img = new Image();
     img.onload = () => setHanyangiExists(true);
     img.onerror = () => setHanyangiExists(false);
-    img.src = '/images/lion.png';
+    img.src = withBasePath('images/lion.png');
   }, []);
 
   useEffect(() => {
@@ -37,7 +41,7 @@ function ResultPage({ result, onReset }) {
     <div className="result-page">
       <div className="hanyangi-mascot">
         {hanyangiExists ? (
-          <img src="/images/lion.png" alt="하냥이" className="hanyangi-image" />
+          <img src={withBasePath('images/lion.png')} alt="하냥이" className="hanyangi-image" />
         ) : (
           <div className="hanyangi-emoji">🦁</div>
         )}
