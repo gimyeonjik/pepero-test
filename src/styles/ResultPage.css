@@ -109,6 +109,7 @@
   text-align: center;
   margin-bottom: 40px;
   padding: 0 20px;
+  white-space: pre-line;
 }
 
 .traits-container {
@@ -198,6 +199,20 @@
   box-shadow: 0 8px 20px var(--accent-glow);
 }
 
+.instagram-notice {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+
+.instagram-notice strong {
+  white-space: pre-line;
+}
+
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -257,10 +272,16 @@
   .result-description {
     font-size: 1rem;
     padding: 0 10px;
+    white-space: pre-line;
   }
 
   .share-button {
     padding: 16px;
     font-size: 1rem;
+  }
+
+  .instagram-notice {
+    font-size: 0.9rem;
+    padding: 0 15px;
   }
 }

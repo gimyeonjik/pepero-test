@@ -28,15 +28,6 @@ function ResultPage({ result, onReset }) {
     navigate('/');
   };
 
-  const handleCopyLink = () => {
-    const url = window.location.href;
-    const text = `나는 ${result.title}! 나의 성향 테스트 결과를 확인해보세요!`;
-
-    navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
-      alert('링크가 복사되었습니다!');
-    });
-  };
-
   return (
     <div className="result-page">
       <div className="hanyangi-mascot">
@@ -52,6 +43,7 @@ function ResultPage({ result, onReset }) {
             <img
               src={result.image}
               alt={`${result.title} 이미지`}
+              
               className="result-image"
               onError={() => setIsImageError(true)}
             />
@@ -73,14 +65,9 @@ function ResultPage({ result, onReset }) {
           </ul>
         </div>
 
-        <div className="share-container">
-          <h3>결과 공유하기</h3>
-          <div className="share-buttons">
-            <button className="share-button copy" onClick={handleCopyLink}>
-              🔗 링크 복사
-            </button>
-          </div>
-        </div>
+        <p className="instagram-notice">
+          <strong>위 결과 화면을 캡쳐하여 인스타그램 스토리에 게시해 주세요!</strong>
+        </p>
 
         <button className="restart-button" onClick={handleRestart}>
           다시 테스트하기
